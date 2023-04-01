@@ -1,18 +1,18 @@
 let notes = [];
 let doneNotes = [];
 let form = document.getElementById("form-container");
+let inputTitle = document.getElementById("inputTitle");
+let textArea = document.getElementById("textArea");
+let inputText = document.getElementById("inputText");
 const formButtons = document.getElementById("form-buttons");
-let notesBlock = document.getElementById("notesContainer");
-let doneNotesBlock = document.getElementById("doneNotesContainer");
 let addBtn = document.getElementById("add-button");
 let closeBtn = document.getElementById("form-close-button");
-let inputTitle = document.getElementById("inputTitle");
-let inputText = document.getElementById("inputText");
 let p = document.getElementById("addedNotesParagraph");
+let notesBlock = document.getElementById("notesContainer");
 let doneNotesHeader = document.getElementById("doneNotesHeader");
+let doneNotesBlock = document.getElementById("doneNotesContainer");
 const notesFromLocalStorage = JSON.parse(localStorage.getItem("notes")); // Fetching the elements in notes array from local storage
 const DoneNotesFromLocalStorage = JSON.parse(localStorage.getItem("doneNotes")); // Fetching the elements in doneNotes array from local storage
-
 
 if (notesFromLocalStorage) {
   notes = notesFromLocalStorage;
@@ -40,13 +40,15 @@ function handleFormClick(event) {
 function openForm() {
   form.classList.add("form-open");
   inputTitle.style.display = "block";
-  inputText.style.display = "block";
+  textArea.style.display = "block";
   formButtons.style.display = "block";
 }
 
+$("#textArea").hide();
+$("#form-buttons").hide();
 function closeForm() {
   form.classList.remove("form-open");
-  inputText.style.display = "none";
+  textArea.style.display = "none";
   formButtons.style.display = "none";
 }
 
@@ -106,8 +108,8 @@ function displayNotes() {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
-              <img id='doneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
-              <img id='deleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
+              <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
+              <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
           </div>
       </div>
@@ -127,7 +129,7 @@ function displayDoneNotes() {
         <br><br><br>
         <div id='note-toolbar-container'>
           <div id='toolbar'>
-            <img id='deleteBtn' src="Images/noteDelete.png" onclick='deleteDoneNote(${note.id})'>
+            <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteDoneNote(${note.id})'>
           </div>
         </div>
     </div>

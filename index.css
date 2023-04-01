@@ -1,6 +1,11 @@
 body {
-    background-color: yellow;
+    background-color: #FFD93D;
 }
+
+/* main {
+    min-height: 500px;
+    max-height: 600px;
+} */
 
 header {
     display: flex;
@@ -28,7 +33,7 @@ h3 {
 }
 
 p {
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
@@ -75,10 +80,6 @@ input {
     font-weight: 500;
 }
 
-#textArea {
-    height: 80px;
-}
-
 #form-container {
     border-radius: 8px;
     border: 0.5px solid #d3d3d3;
@@ -96,7 +97,6 @@ input {
     position: absolute;
     right: 0;
     bottom: 0;
-    /* display: none; */
 }
 
 button {
@@ -127,12 +127,13 @@ button:active {
 #notesContainer {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px auto 70px auto;
+    margin: 10px auto 10px auto;
     max-width: 1700px;
-    /* background-color: red; */
 }
 
 #doneNotesHeader {
+    margin-bottom: 20px;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +149,7 @@ button:active {
 #doneNotesContainer {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px auto 70px auto;
+    margin: 10px auto 50px auto;
     max-width: 1700px;
 }
 
@@ -159,7 +160,6 @@ button:active {
       0 2px 6px 2px rgba(60, 64, 67, 0.149);
     width: 200px;
     margin: 5px;
-    /* height: auto; */
     position: relative;
     min-height: 100px;
 }
@@ -187,13 +187,13 @@ button:active {
     width: 100%;
 }
 
-#doneBtn, #deleteBtn {
+#noteDoneBtn, #noteDeleteBtn {
     height: 30px;
     margin-top: 30px;
     cursor: pointer;
 }
 
-#deleteBtn {
+#noteDeleteBtn {
     margin-right: 7px;
 }
 
