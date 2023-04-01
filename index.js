@@ -1,5 +1,7 @@
 let notes = [];
 let doneNotes = [];
+let form = document.getElementById("form-container");
+const formButtons = document.getElementById("form-buttons");
 let notesBlock = document.getElementById("notesContainer");
 let doneNotesBlock = document.getElementById("doneNotesContainer");
 let addBtn = document.getElementById("add-button");
@@ -20,6 +22,32 @@ if (notesFromLocalStorage) {
 if (DoneNotesFromLocalStorage) {
   doneNotes = DoneNotesFromLocalStorage;
   displayDoneNotes();
+}
+
+document.body.addEventListener("click", event => {
+  handleFormClick(event);
+});
+
+function handleFormClick(event) {
+  const isFormClicked = form.contains(event.target);
+  if (isFormClicked) {
+    openForm();
+  } else {
+    closeForm();
+  }
+}
+
+function openForm() {
+  form.classList.add("form-open");
+  inputTitle.style.display = "block";
+  inputText.style.display = "block";
+  formButtons.style.display = "block";
+}
+
+function closeForm() {
+  form.classList.remove("form-open");
+  inputText.style.display = "none";
+  formButtons.style.display = "none";
 }
 
 addBtn.addEventListener("click", event => {

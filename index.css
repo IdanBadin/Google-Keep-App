@@ -75,6 +75,10 @@ input {
     font-weight: 500;
 }
 
+#textArea {
+    height: 80px;
+}
+
 #form-container {
     border-radius: 8px;
     border: 0.5px solid #d3d3d3;
