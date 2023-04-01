@@ -183,7 +183,7 @@ function deleteNote(noteID) {
   displayNotes();
   let hasNotes = notes.length === 0;
   if(hasNotes) {
-    p.textContent = "Notes you add will apeare here";
+    p.textContent = "Notes you add will appear here";
   }
 };
 
@@ -211,7 +211,7 @@ function noteDone(noteID) {
  localStorage.setItem("notes", JSON.stringify(notes));
  let hasNotes = notes.length === 0;
   if(hasNotes) {
-    p.textContent = "Notes you add will apeare here";
+    p.textContent = "Notes you add will appear here";
   }
  displayNotes();
  displayDoneNotes();
