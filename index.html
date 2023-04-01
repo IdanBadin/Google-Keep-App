@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <img id="logo" src="Images/Google Keep Logo.png" alt="Main Logo">
+                <h2>Google Keep</h2>
+            </header>
+            <h3>Write a note</h3>
+            <div id="form-container">
+                <form id="form" autocomplete="off">
+                    <div class="wave-group">
+                        <input required="" type="text" class="input" id="inputTitle" title="Note Title">
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">T</span>
+                          <span class="label-char" style="--index: 1">i</span>
+                          <span class="label-char" style="--index: 2">t</span>
+                          <span class="label-char" style="--index: 3">l</span>
+                          <span class="label-char" style="--index: 4">e</span>
+                        </label>
+                      </div>
+                      <div class="wave-group">
+                        <textarea required="" type="text" class="input" id="inputText" title="Note Text"></textarea>
+                        <span class="bar"></span>
+                        <label class="label">
+                          <span class="label-char" style="--index: 0">T</span>
+                          <span class="label-char" style="--index: 1">e</span>
+                          <span class="label-char" style="--index: 2">x</span>
+                          <span class="label-char" style="--index: 3">t</span>
+                        </label>
+                    </div>
+                    <div id="form-buttons">
+                        <button type="submit" id="add-button">Add</button> 
+                        <button type="button" id="form-close-button">Close</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <p id="addedNotesParagraph">Notes you add will apeare here</p>
+            </div>
+            <div id="notesContainer"></div>
+            <div id="doneNotesHeader"></div>
+            <div id="doneNotesContainer"></div>
+            <img id="scrollToTopBtn" src="Images/arrowUp.png" alt="scroll to top button" onclick="topFunction()">
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
