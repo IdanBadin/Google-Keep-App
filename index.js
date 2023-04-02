@@ -55,7 +55,7 @@ function closeForm() {
 addBtn.addEventListener("click", event => {
     event.preventDefault();
     const title = inputTitle.value;
-    const text = inputText.value;
+    const text = inputText.value.replace(/\n/g, '<br/>');
     function getCurrentDate() {
       var today = new Date();
       var dd = today.getDate();

@@ -2,11 +2,6 @@ body {
     background-color: #FFD93D;
 }
 
-/* main {
-    min-height: 500px;
-    max-height: 600px;
-} */
-
 header {
     display: flex;
     align-items: center;
