@@ -108,6 +108,7 @@ function displayNotes() {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
+              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -186,6 +187,40 @@ function deleteNote(noteID) {
     p.textContent = "Notes you add will appear here";
   }
 };
+
+function modifyNote(noteID) {
+  notesBlock.innerHTML = notes.map(note => {
+    if (note.id === noteID) {
+      return `
+      <div id='note' style='background-color: ${note.color}'>
+          <div id='noteDate'>Created on: ${note.date}</div>
+          <input id='noteTitleModify' required="" type="text" value="${note.title}">
+          <div id='noteText'>${note.text}</div>
+          <br><br><br>
+          <div id='note-toolbar-container'>
+            <div id='toolbar'>
+              <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
+              <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
+            </div>
+          </div>
+      </div>
+    `} else {
+      return `
+      <div id='note' style='background-color: ${note.color}'>
+          <div id='noteDate'>Created on: ${note.date}</div>
+          <div id='noteTitle' style='background-color: ${note.color};text-align: center;font-weight: bold'>${note.title}</div>
+          <div id='noteText'>${note.text}</div>
+          <br><br><br>
+          <div id='note-toolbar-container'>
+            <div id='toolbar'>
+              <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
+              <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
+            </div>
+          </div>
+      </div>
+    `}
+  }).join(" ");
+}
 
 function deleteDoneNote(noteID) {
   doneNotes = doneNotes.filter(note => note.id !== noteID);
