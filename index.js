@@ -194,11 +194,12 @@ function modifyNote(noteID) {
       return `
       <div id='note' style='background-color: ${note.color}'>
           <div id='noteDate'>Created on: ${note.date}</div>
-          <input id='noteTitleModify' required="" type="text" value="${note.title}">
-          <div id='noteText'>${note.text}</div>
+          <input id='noteTitleModify' required="" type="text" title='Note Title' value="${note.title}">
+          <div id='noteTextModify' ><textarea id='noteTextAreaModify' required="" type="text" title="Note Text">${note.text}</textarea></div>
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
+              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -213,6 +214,7 @@ function modifyNote(noteID) {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
+              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -221,6 +223,15 @@ function modifyNote(noteID) {
     `}
   }).join(" ");
 }
+
+// Form Text area grows/shrinks as to the content inside
+$("textarea").each(function () {
+  this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+  this.style.height = 0;
+  this.style.height = (this.scrollHeight) + "px";
+});
+//-------------------------------------------------------------------------------------------
 
 function deleteDoneNote(noteID) {
   doneNotes = doneNotes.filter(note => note.id !== noteID);

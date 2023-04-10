@@ -185,6 +185,21 @@ button:active {
     overflow-wrap: break-word;
 }
 
+#noteTextModify {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 183px;
+}
+
+#noteTextAreaModify {
+    max-width: 183px;
+    min-width: 183px;
+    min-height: 50px;
+    font-size: 16px;
+    height: auto;
+    /* overflow: hidden; */
+}
+
 #note-toolbar-container {
     text-align: right;
     margin-bottom: 3px;
@@ -193,9 +208,13 @@ button:active {
     width: 100%;
 }
 
+#toolbar {
+    height: 35px;
+}
+
 #noteDoneBtn, #noteDeleteBtn, #noteModifyBtn {
     height: 30px;
-    margin-top: 30px;
+    margin-top: 3px;
     cursor: pointer;
 }
 
