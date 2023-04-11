@@ -163,11 +163,17 @@ button:active {
 }
 
 #noteTitle {
+    margin-right: 10px;
+    margin-left: 10px;
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-#noteTitleModify {
+#noteTitleEdit {
+    font-family: 'Roboto Condensed', sans-serif;
     border: 1px solid black;
     width: 183px;
     margin-left: 5px;
@@ -185,13 +191,16 @@ button:active {
     overflow-wrap: break-word;
 }
 
-#noteTextModify {
+#noteTextEditContainer {
+    font-family: 'Roboto Condensed', sans-serif;
     margin-top: 10px;
     margin-left: 5px;
     width: 183px;
 }
 
-#noteTextAreaModify {
+#noteTextAreaEdit {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     max-width: 183px;
     min-width: 183px;
     min-height: 50px;
@@ -202,24 +211,32 @@ button:active {
 
 #note-toolbar-container {
     text-align: right;
-    margin-bottom: 3px;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
 #toolbar {
-    height: 35px;
+    margin-right: 7px;
+    margin-bottom: 3px;
 }
 
-#noteDoneBtn, #noteDeleteBtn, #noteModifyBtn {
-    height: 30px;
+#noteDoneBtn, #noteDeleteBtn, #noteEditBtn {
+    height: 25px;
     margin-top: 3px;
     cursor: pointer;
 }
 
-#noteDeleteBtn {
-    margin-right: 7px;
+#noteDeleteBtn, #noteEditBtn{
+    height: 22px;
+}
+
+#noteDoneBtn {
+    margin-bottom: -3px;
+}
+
+#noteDoneBtn:active, #noteDeleteBtn:active, #noteEditBtn:active {
+    transform: scale(0.9);
 }
 
 #backToTopBtn {

@@ -108,7 +108,7 @@ function displayNotes() {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
-              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
+              <img id='noteEditBtn' src="Images/noteEditBtn.png" onclick='editNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -188,18 +188,18 @@ function deleteNote(noteID) {
   }
 };
 
-function modifyNote(noteID) {
+function editNote(noteID) {
   notesBlock.innerHTML = notes.map(note => {
     if (note.id === noteID) {
       return `
       <div id='note' style='background-color: ${note.color}'>
           <div id='noteDate'>Created on: ${note.date}</div>
-          <input id='noteTitleModify' required="" type="text" title='Note Title' value="${note.title}">
-          <div id='noteTextModify' ><textarea id='noteTextAreaModify' required="" type="text" title="Note Text">${note.text}</textarea></div>
+          <input id='noteTitleEdit' required="" type="text" title='Note Title' value="${note.title}">
+          <div id='noteTextEditContainer' ><textarea id='noteTextAreaEdit' required="" type="text" title="Note Text">${note.text}</textarea></div>
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
-              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
+              <img id='noteEditBtn' src="Images/saveChangesBtn.png" onclick='saveEditedNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -214,7 +214,7 @@ function modifyNote(noteID) {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
-              <img id='noteModifyBtn' src="Images/modifyBtn.png" onclick='modifyNote(${note.id})'>
+              <img id='noteEditBtn' src="Images/noteEditBtn.png" onclick='editNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>
@@ -222,6 +222,19 @@ function modifyNote(noteID) {
       </div>
     `}
   }).join(" ");
+}
+
+function saveEditedNote(noteID) {
+  notes = notes.map(note => {
+    if (note.id === noteID) {
+      const editedNoteTitle = $("#noteTitleEdit").val();
+      const editedNoteText = $("#noteTextAreaEdit").val().replace(/\n/g, '<br/>');;
+      return {...note, title: editedNoteTitle, text: editedNoteText};
+    } else {
+      return note;
+    }
+  })
+  displayNotes();
 }
 
 // Form Text area grows/shrinks as to the content inside
