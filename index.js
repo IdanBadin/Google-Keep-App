@@ -235,6 +235,7 @@ function saveEditedNote(noteID) {
     }
   })
   displayNotes();
+  localStorage.setItem("notes", JSON.stringify(notes));
 }
 
 // Form Text area grows/shrinks as to the content inside
