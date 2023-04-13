@@ -5,8 +5,8 @@ let inputTitle = document.getElementById("inputTitle");
 let textArea = document.getElementById("textArea");
 let inputText = document.getElementById("inputText");
 const formButtons = document.getElementById("form-buttons");
-let addBtn = document.getElementById("add-button");
-let closeBtn = document.getElementById("form-close-button");
+let addBtn = document.getElementById("add-note-button");
+let formCloseBtn = document.getElementById("form-close-button");
 let p = document.getElementById("addedNotesParagraph");
 let notesBlock = document.getElementById("notesContainer");
 let doneNotesHeader = document.getElementById("doneNotesHeader");
@@ -195,7 +195,7 @@ function editNote(noteID) {
       <div id='note' style='background-color: ${note.color}'>
           <div id='noteDate'>Created on: ${note.date}</div>
           <input id='noteTitleEdit' required="" type="text" title='Note Title' value="${note.title}">
-          <div id='noteTextEditContainer' ><textarea id='noteTextAreaEdit' required="" type="text" title="Note Text">${note.text}</textarea></div>
+          <div id='noteTextEditContainer' ><textarea onclick='adjustHeight(this)' id='noteTextAreaEdit' required="" type="text" title="Note Text">${note.text.replaceAll('<br/>', '\n')}</textarea></div>
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
@@ -224,11 +224,16 @@ function editNote(noteID) {
   }).join(" ");
 }
 
+// function to adjust the height of a text area when editing a note to the height of the content inside the text area
+function adjustHeight(el){
+  el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "null";
+}
+
 function saveEditedNote(noteID) {
   notes = notes.map(note => {
     if (note.id === noteID) {
       const editedNoteTitle = $("#noteTitleEdit").val();
-      const editedNoteText = $("#noteTextAreaEdit").val().replace(/\n/g, '<br/>');;
+      const editedNoteText = $("#noteTextAreaEdit").val().replace(/\n/g, '<br/>');
       return {...note, title: editedNoteTitle, text: editedNoteText};
     } else {
       return note;
