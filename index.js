@@ -199,7 +199,7 @@ function editNote(noteID) {
           <br><br><br>
           <div id='note-toolbar-container'>
             <div id='toolbar'>
-              <img id='noteEditBtn' src="Images/saveChangesBtn.png" onclick='saveEditedNote(${note.id})'>
+              <img id='saveEditedNoteBtn' src="Images/saveChangesBtn.png" onclick='saveEditedNote(${note.id})'>
               <img id='noteDoneBtn' src="Images/noteDone.png" onclick='noteDone(${note.id})'>
               <img id='noteDeleteBtn' src="Images/noteDelete.png" onclick='deleteNote(${note.id})'>
             </div>

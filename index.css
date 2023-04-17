@@ -227,7 +227,7 @@ button:active {
     cursor: pointer;
 }
 
-#noteDeleteBtn, #noteEditBtn{
+#noteDeleteBtn, #noteEditBtn, #saveEditedNoteBtn {
     height: 22px;
 }
 
