@@ -14,6 +14,7 @@ let doneNotesBlock = document.getElementById("doneNotesContainer");
 const notesFromLocalStorage = JSON.parse(localStorage.getItem("notes")); // Fetching the elements in notes array from local storage
 const DoneNotesFromLocalStorage = JSON.parse(localStorage.getItem("doneNotes")); // Fetching the elements in doneNotes array from local storage
 
+// Shadow effect on navbar when scrolling the page
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
   if (scroll > 0) {
