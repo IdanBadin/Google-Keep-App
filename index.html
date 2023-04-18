@@ -9,12 +9,49 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="navbar.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
+        <div id="navbar-container" class="userScrollsNav">
+            <nav id="navbar">
+                <ul class="menu">
+                    <li id="navbar-logo">
+                        <p>Custom Logo</p>
+                    </li>
+                    <li id="trigram" tabindex="-1">
+                        <div>&#9776</div>				
+                    </li>
+                    <span id="responsive-menu">
+                        <ul class="menu">
+                            <li class="menu-option">
+                                <p>Home</p>
+                            </li>
+                            <li class="menu-option">
+                  <p>Products <strong>v</strong></p>
+                                <ul id="products">
+                                    <li>Softwares</li>
+                                    <li>Hardwares</li>
+                                    <li>Others</li>
+                                </ul>
+                            </li>
+                            <li class="menu-option">
+                                <p>About us</p>
+                            </li>
+                            <li id="sign-in">
+                                <p>Sign in</p>
+                            </li>
+                            <li id="sign-up">
+                                <p>Sign up</p>
+                            </li>
+                        </ul>
+                    </span>
+                </ul>
+            </nav>
+        </div>
         <main>
             <header>
                 <img id="logo" src="Images/Google Keep Logo.png" alt="Main Logo">

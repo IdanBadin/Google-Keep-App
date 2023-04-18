@@ -6,7 +6,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 3em;
     letter-spacing: 2px;
 }
 
@@ -337,6 +337,4 @@ button:active {
 .wave-group .input:focus ~ .bar:after {
     width: 50%;
 }
-
-   
    

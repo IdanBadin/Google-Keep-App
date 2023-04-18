@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
+
+:root{
+	--black: #5A5566;
+	--light-purple: #CBBFE6;
+	--purple: #9D7CEA;
+	--gray-purple: #9D94B3;
+	--dark-purple: #443666;
+	font-family: 'Inter', sans-serif;
+}
+
+html, body, p, ul{
+	margin: 0;
+	padding: 0;
+}
+
+#navbar-container {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+li{
+	color: var(--black);
+	list-style: none;
+}
+
+ul{
+	display: flex;
+	display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+	cursor: pointer;
+}
+
+.menu-option, #sign-in, #sign-up{
+	position: relative;
+	margin: 10px 10px;
+	transition: 0.2s;
+}
+
+.menu-option:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 0;
+	height: 2px;
+	background-color: white;
+	transition: width 0.2s ease-in-out;
+}
+
+.menu-option:hover, #sign-in:hover, #sign-up:hover{
+	color: white;
+}
+
+.menu-option:hover{
+	text-shadow: 1px 0px 3px black;
+}
+
+.menu-option:hover:after{
+	width: 100%;
+}
+
+#trigram{
+	display: none;
+	font-size: 24px;
+	margin-right: 30px;
+	color: var(--dark-purple);
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+#navbar-logo{
+	margin-right: auto;
+	margin-left: 50px;
+	font-weight: 800;
+	font-size: 18px;
+	color: var(--gray-purple);
+	border-radius: 100%;
+	text-transform: uppercase;
+	font-family: 'Azeret Mono', monospace;
+}
+
+#logo p{
+	display: table-caption;
+	margin: 10px 0;
+	text-align: center;
+}
+
+#sign-in{
+	margin-left: auto;
+}
+
+#sign-in, #sign-up{
+	font-weight: 800;
+	color: var(--purple);
+	padding: 5px 10px;
+	transition: 0.2s;
+	border-radius: 20px;
+}
+
+#sign-in:hover, #sign-up:hover{
+	background-color: black;
+}
+
+.menu{
+	background-color: #FFD93D;
+}
+
+#sign-up{
+	margin-right: 50px;
+}
+
+#responsive-menu .menu li:nth-of-type(2){
+	position: relative;
+}
+
+#products{
+	display: none;
+	position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--black);
+    padding: 10px 5px;
+    text-shadow: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#products li{
+	color: gainsboro;
+	padding: 5px 0;
+	transition: color 0.3s;
+}
+
+#products li:hover{
+	color: white;
+}
+
+#responsive-menu .menu li:nth-of-type(2):hover #products{
+	display: flex;
+}
+
+#responsive-menu{
+	flex: 1;
+}
+
+#responsive-menu .menu .menu-option:nth-of-type(1){
+	margin-left: 50px;
+}
+
+#trigram:hover, #trigram:focus{
+	color: white;
+}
+
+@media(max-width: 700px){
+	#responsive-menu{
+		display: none;
+	}
+	.menu{
+		position: relative;
+	}
+	#trigram{
+		display: unset;
+	}
+	#trigram:focus ~ #responsive-menu{
+		display: flex;
+		position: absolute;
+		right: 0;
+	}
+	#trigram:focus ~ #responsive-menu .menu{
+		background-color: var(--dark-purple);
+		flex-direction: column;
+		margin-top: 300px;
+		padding-right: 30px;
+		align-items: flex-start;
+	}
+	.menu-option p{
+		color: var(--light-purple);
+	}
+	.menu-option{
+		text-align: left;
+	}
+	#sign-in, #sign-up, .menu-option{
+		margin: 5px;
+		margin-right: 0;
+		margin-bottom: 5px;
+		margin-left: 0;
+		padding: 5px 10px 5px 15px;
+	}
+	#products{
+		margin-left: -107px;
+    	margin-top: -20px;
+	}
+	#responsive-menu .menu li:nth-of-type(2):hover #products{
+		display: flex;
+	}
+	#responsive-menu .menu .menu-option:nth-of-type(1) {
+		margin-left: 0;
+	}
+}
+
+.userScrollsNav {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
