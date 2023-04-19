@@ -17,7 +17,7 @@ const DoneNotesFromLocalStorage = JSON.parse(localStorage.getItem("doneNotes"));
 // Shadow effect on navbar when scrolling the page
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
-  if (scroll > 0) {
+  if (scroll > 10) {
     $('#navbar-container').addClass('userScrollsNav');
   } else {
     $('#navbar-container').removeClass('userScrollsNav');
