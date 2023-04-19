@@ -77,23 +77,6 @@ p{
 	transition: color 0.2s;
 }
 
-#navbar-logo{
-	margin-right: auto;
-	margin-left: 50px;
-	font-weight: 800;
-	font-size: 18px;
-	color: var(--gray-purple);
-	border-radius: 100%;
-	text-transform: uppercase;
-	font-family: 'Azeret Mono', monospace;
-}
-
-#logo p{
-	display: table-caption;
-	margin: 10px 0;
-	text-align: center;
-}
-
 #sign-in{
 	margin-left: auto;
 }
@@ -210,4 +193,26 @@ p{
 .userScrollsNav {
     background-color: #ffffff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#navbar-logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	margin-left: 10px;
+}
+
+#navbar-logo h2{
+	font-size: 45px;
+	display: inline-block;
+	/* margin-bottom: 100px; */
+	margin-top: -10px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 15px;
+}
+
+#navbar-logo img {
+	height: 50px;
 }
